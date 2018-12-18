@@ -12,20 +12,22 @@ namespace xAH {
     public:
       enum BTaggerOP {
 	None,
-	DL1rnn_FixedCutBEff_60, DL1rnn_FixedCutBEff_70,DL1rnn_FixedCutBEff_77,DL1rnn_FixedCutBEff_85,
-	DL1rnn_HybBEff_60,DL1rnn_HybBEff_70,DL1rnn_HybBEff_77,DL1rnn_HybBEff_85,
+	DL1r_FixedCutBEff_60, DL1r_FixedCutBEff_70,DL1r_FixedCutBEff_77,DL1r_FixedCutBEff_85,
+	DL1r_HybBEff_60,DL1r_HybBEff_70,DL1r_HybBEff_77,DL1r_HybBEff_85,
 	DL1mu_FixedCutBEff_60,DL1mu_FixedCutBEff_70,DL1mu_FixedCutBEff_77,DL1mu_FixedCutBEff_85,
 	DL1mu_HybBEff_60,DL1mu_HybBEff_70,DL1mu_HybBEff_77,DL1mu_HybBEff_85,
+	DL1rmu_FixedCutBEff_60,DL1rmu_FixedCutBEff_70,DL1rmu_FixedCutBEff_77,DL1rmu_FixedCutBEff_85,
+	DL1rmu_HybBEff_60,DL1rmu_HybBEff_70,DL1rmu_HybBEff_77,DL1rmu_HybBEff_85,
 	DL1_FixedCutBEff_60,DL1_FixedCutBEff_70,DL1_FixedCutBEff_77,DL1_FixedCutBEff_85,
 	DL1_HybBEff_60,DL1_HybBEff_70,DL1_HybBEff_77,DL1_HybBEff_85,
-	MV2c10rnn_FixedCutBEff_60,MV2c10rnn_FixedCutBEff_70,MV2c10rnn_FixedCutBEff_77,MV2c10rnn_FixedCutBEff_85,
-	MV2c10rnn_HybBEff_60,MV2c10rnn_HybBEff_70,MV2c10rnn_HybBEff_77,MV2c10rnn_HybBEff_85,
-	MV2c10mu_FixedCutBEff_60,MV2c10mu_FixedCutBEff_70,MV2c10mu_FixedCutBEff_77,MV2c10mu_FixedCutBEff_85,
-	MV2c10mu_HybBEff_60,MV2c10mu_HybBEff_70,MV2c10mu_HybBEff_77,MV2c10mu_HybBEff_85,
+	MV2r_FixedCutBEff_60,MV2r_FixedCutBEff_70,MV2r_FixedCutBEff_77,MV2r_FixedCutBEff_85,
+	MV2r_HybBEff_60,MV2r_HybBEff_70,MV2r_HybBEff_77,MV2r_HybBEff_85,
 	MV2c10_FixedCutBEff_30,MV2c10_FixedCutBEff_50,MV2c10_FixedCutBEff_90, // R20.7
 	MV2c10_FixedCutBEff_60,MV2c10_FixedCutBEff_70,MV2c10_FixedCutBEff_77,MV2c10_FixedCutBEff_85,
 	MV2c10_FlatBEff_30,MV2c10_FlatBEff_50,MV2c10_FlatBEff_60,MV2c10_FlatBEff_70,MV2c10_FlatBEff_77,MV2c10_FlatBEff_85, // R20.7
-	MV2c10_HybBEff_60,MV2c10_HybBEff_70,MV2c10_HybBEff_77,MV2c10_HybBEff_85
+	MV2c10_HybBEff_60,MV2c10_HybBEff_70,MV2c10_HybBEff_77,MV2c10_HybBEff_85,
+	MV2rmu_FixedCutBEff_60,MV2rmu_FixedCutBEff_70,MV2rmu_FixedCutBEff_77,MV2rmu_FixedCutBEff_85,
+	MV2rmu_HybBEff_60,MV2rmu_HybBEff_70,MV2rmu_HybBEff_77,MV2rmu_HybBEff_85
       };
 
       Jet();
@@ -93,8 +95,8 @@ namespace xAH {
       float MV1;
       float MV2c00;
       float MV2c10;
-      float MV2c10mu;
-      float MV2c10rnn;
+      float MV2r;
+      float MV2rmu;
       float MV2c20;
       float MV2c100;
       float DL1;
@@ -105,10 +107,14 @@ namespace xAH {
       float DL1mu_pu;
       float DL1mu_pc;
       float DL1mu_pb;
-      float DL1rnn;
-      float DL1rnn_pu;
-      float DL1rnn_pc;
-      float DL1rnn_pb;
+      float DL1r;
+      float DL1r_pu;
+      float DL1r_pc;
+      float DL1r_pb;
+      float DL1rmu;
+      float DL1rmu_pu;
+      float DL1rmu_pc;
+      float DL1rmu_pb;
       int  HadronConeExclTruthLabelID;
       int  HadronConeExclExtendedTruthLabelID;
 
@@ -196,23 +202,23 @@ namespace xAH {
       std::vector<float> IP3D_weightUofTracks    ;
 
       // jetBTag
-      int is_DL1rnn_FixedCutBEff_60;
-      std::vector<float> SF_DL1rnn_FixedCutBEff_60;
-      int is_DL1rnn_FixedCutBEff_70;
-      std::vector<float> SF_DL1rnn_FixedCutBEff_70;
-      int is_DL1rnn_FixedCutBEff_77;
-      std::vector<float> SF_DL1rnn_FixedCutBEff_77;
-      int is_DL1rnn_FixedCutBEff_85;
-      std::vector<float> SF_DL1rnn_FixedCutBEff_85;
+      int is_DL1r_FixedCutBEff_60;
+      std::vector<float> SF_DL1r_FixedCutBEff_60;
+      int is_DL1r_FixedCutBEff_70;
+      std::vector<float> SF_DL1r_FixedCutBEff_70;
+      int is_DL1r_FixedCutBEff_77;
+      std::vector<float> SF_DL1r_FixedCutBEff_77;
+      int is_DL1r_FixedCutBEff_85;
+      std::vector<float> SF_DL1r_FixedCutBEff_85;
 
-      int is_DL1rnn_HybBEff_60;
-      std::vector<float> SF_DL1rnn_HybBEff_60;
-      int is_DL1rnn_HybBEff_70;
-      std::vector<float> SF_DL1rnn_HybBEff_70;
-      int is_DL1rnn_HybBEff_77;
-      std::vector<float> SF_DL1rnn_HybBEff_77;
-      int is_DL1rnn_HybBEff_85;
-      std::vector<float> SF_DL1rnn_HybBEff_85;
+      int is_DL1r_HybBEff_60;
+      std::vector<float> SF_DL1r_HybBEff_60;
+      int is_DL1r_HybBEff_70;
+      std::vector<float> SF_DL1r_HybBEff_70;
+      int is_DL1r_HybBEff_77;
+      std::vector<float> SF_DL1r_HybBEff_77;
+      int is_DL1r_HybBEff_85;
+      std::vector<float> SF_DL1r_HybBEff_85;
 
       int is_DL1mu_FixedCutBEff_60;
       std::vector<float> SF_DL1mu_FixedCutBEff_60;
@@ -250,41 +256,41 @@ namespace xAH {
       int is_DL1_HybBEff_85;
       std::vector<float> SF_DL1_HybBEff_85;
 
-      int is_MV2c10rnn_FixedCutBEff_60;
-      std::vector<float> SF_MV2c10rnn_FixedCutBEff_60;
-      int is_MV2c10rnn_FixedCutBEff_70;
-      std::vector<float> SF_MV2c10rnn_FixedCutBEff_70;
-      int is_MV2c10rnn_FixedCutBEff_77;
-      std::vector<float> SF_MV2c10rnn_FixedCutBEff_77;
-      int is_MV2c10rnn_FixedCutBEff_85;
-      std::vector<float> SF_MV2c10rnn_FixedCutBEff_85;
+      int is_DL1rmu_FixedCutBEff_60;
+      std::vector<float> SF_DL1rmu_FixedCutBEff_60;
+      int is_DL1rmu_FixedCutBEff_70;
+      std::vector<float> SF_DL1rmu_FixedCutBEff_70;
+      int is_DL1rmu_FixedCutBEff_77;
+      std::vector<float> SF_DL1rmu_FixedCutBEff_77;
+      int is_DL1rmu_FixedCutBEff_85;
+      std::vector<float> SF_DL1rmu_FixedCutBEff_85;
 
-      int is_MV2c10rnn_HybBEff_60;
-      std::vector<float> SF_MV2c10rnn_HybBEff_60;
-      int is_MV2c10rnn_HybBEff_70;
-      std::vector<float> SF_MV2c10rnn_HybBEff_70;
-      int is_MV2c10rnn_HybBEff_77;
-      std::vector<float> SF_MV2c10rnn_HybBEff_77;
-      int is_MV2c10rnn_HybBEff_85;
-      std::vector<float> SF_MV2c10rnn_HybBEff_85;
+      int is_DL1rmu_HybBEff_60;
+      std::vector<float> SF_DL1rmu_HybBEff_60;
+      int is_DL1rmu_HybBEff_70;
+      std::vector<float> SF_DL1rmu_HybBEff_70;
+      int is_DL1rmu_HybBEff_77;
+      std::vector<float> SF_DL1rmu_HybBEff_77;
+      int is_DL1rmu_HybBEff_85;
+      std::vector<float> SF_DL1rmu_HybBEff_85;
+      
+      int is_MV2r_FixedCutBEff_60;
+      std::vector<float> SF_MV2r_FixedCutBEff_60;
+      int is_MV2r_FixedCutBEff_70;
+      std::vector<float> SF_MV2r_FixedCutBEff_70;
+      int is_MV2r_FixedCutBEff_77;
+      std::vector<float> SF_MV2r_FixedCutBEff_77;
+      int is_MV2r_FixedCutBEff_85;
+      std::vector<float> SF_MV2r_FixedCutBEff_85;
 
-      int is_MV2c10mu_FixedCutBEff_60;
-      std::vector<float> SF_MV2c10mu_FixedCutBEff_60;
-      int is_MV2c10mu_FixedCutBEff_70;
-      std::vector<float> SF_MV2c10mu_FixedCutBEff_70;
-      int is_MV2c10mu_FixedCutBEff_77;
-      std::vector<float> SF_MV2c10mu_FixedCutBEff_77;
-      int is_MV2c10mu_FixedCutBEff_85;
-      std::vector<float> SF_MV2c10mu_FixedCutBEff_85;
-
-      int is_MV2c10mu_HybBEff_60;
-      std::vector<float> SF_MV2c10mu_HybBEff_60;
-      int is_MV2c10mu_HybBEff_70;
-      std::vector<float> SF_MV2c10mu_HybBEff_70;
-      int is_MV2c10mu_HybBEff_77;
-      std::vector<float> SF_MV2c10mu_HybBEff_77;
-      int is_MV2c10mu_HybBEff_85;
-      std::vector<float> SF_MV2c10mu_HybBEff_85;
+      int is_MV2r_HybBEff_60;
+      std::vector<float> SF_MV2r_HybBEff_60;
+      int is_MV2r_HybBEff_70;
+      std::vector<float> SF_MV2r_HybBEff_70;
+      int is_MV2r_HybBEff_77;
+      std::vector<float> SF_MV2r_HybBEff_77;
+      int is_MV2r_HybBEff_85;
+      std::vector<float> SF_MV2r_HybBEff_85;
 
       int is_MV2c10_FixedCutBEff_30;
       std::vector<float> SF_MV2c10_FixedCutBEff_30;
@@ -322,7 +328,33 @@ namespace xAH {
       std::vector<float> SF_MV2c10_HybBEff_77;
       int is_MV2c10_HybBEff_85;
       std::vector<float> SF_MV2c10_HybBEff_85;
+      
+      int is_MV2rmu_FixedCutBEff_60;
+      std::vector<float> SF_MV2rmu_FixedCutBEff_60;
+      int is_MV2rmu_FixedCutBEff_70;
+      std::vector<float> SF_MV2rmu_FixedCutBEff_70;
+      int is_MV2rmu_FixedCutBEff_77;
+      std::vector<float> SF_MV2rmu_FixedCutBEff_77;
+      int is_MV2rmu_FixedCutBEff_85;
+      std::vector<float> SF_MV2rmu_FixedCutBEff_85;
+      
+      int is_MV2rmu_FlatBEff_60;
+      std::vector<float> SF_MV2rmu_FlatBEff_60;
+      int is_MV2rmu_FlatBEff_70;
+      std::vector<float> SF_MV2rmu_FlatBEff_70;
+      int is_MV2rmu_FlatBEff_77;
+      std::vector<float> SF_MV2rmu_FlatBEff_77;
+      int is_MV2rmu_FlatBEff_85;
+      std::vector<float> SF_MV2rmu_FlatBEff_85;
 
+      int is_MV2rmu_HybBEff_60;
+      std::vector<float> SF_MV2rmu_HybBEff_60;
+      int is_MV2rmu_HybBEff_70;
+      std::vector<float> SF_MV2rmu_HybBEff_70;
+      int is_MV2rmu_HybBEff_77;
+      std::vector<float> SF_MV2rmu_HybBEff_77;
+      int is_MV2rmu_HybBEff_85;
+      std::vector<float> SF_MV2rmu_HybBEff_85;
       // truth
       int   ConeTruthLabelID;
       int   TruthCount;
